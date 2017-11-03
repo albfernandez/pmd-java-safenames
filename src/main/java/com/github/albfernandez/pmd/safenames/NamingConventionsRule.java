@@ -98,7 +98,7 @@ public class NamingConventionsRule extends AbstractJavaRule {
 		int size = name.length();
 		for (int i = 0; i < size; i++) {
 			char c = name.charAt(i);
-			boolean valid = (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c == '_');
+			boolean valid = c >= 'a' && c <= 'z' || c >= '0' && c <= '9' || c >= 'A' && c <= 'Z' || c == '_';
 			if (!valid) {
 				return false;
 			}
