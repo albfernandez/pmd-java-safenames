@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<ruleset name="SafeNames" language="java"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    
+<description>
+The Naming Ruleset contains rules regarding preferred usage of names and identifiers.
+</description>
+      <rule 
+      name="SafeNames"
+      language="java"
+      since="1.0"
+      message="{0} element should be named only with valid ASCII characters"
+      class="com.github.albfernandez.pmd.safenames.NamingConventionsRule">
+    <description>
+		
+    </description>
+    <priority>1</priority>
+  </rule>
+</ruleset>
