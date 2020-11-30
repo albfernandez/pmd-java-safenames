@@ -115,7 +115,7 @@
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 						</manifest>
 						<manifestEntries>
-							<Automatic-Module-Name>${project.groupId}.${project.artifactId}</Automatic-Module-Name>
+							<Automatic-Module-Name>com.github.albfernandez.pmd.safenames</Automatic-Module-Name>
 						</manifestEntries>
 					</archive>
 				</configuration>
