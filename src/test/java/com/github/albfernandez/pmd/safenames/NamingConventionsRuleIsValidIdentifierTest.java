@@ -2,8 +2,8 @@ package com.github.albfernandez.pmd.safenames;
 
 import static com.github.albfernandez.pmd.safenames.NamingConventionsRule.isValidIdentifier;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class NamingConventionsRuleIsValidIdentifierTest {
 
@@ -13,21 +13,21 @@ public class NamingConventionsRuleIsValidIdentifierTest {
 	
 	@Test
 	public void testIsValidIdentifier() {		
-		Assert.assertFalse(isValidIdentifier(null));
-		Assert.assertFalse(isValidIdentifier(""));
-		Assert.assertFalse(isValidIdentifier("_"));
-		Assert.assertFalse(isValidIdentifier(" "));
-		Assert.assertFalse(isValidIdentifier("spaces and spaces"));
+		Assertions.assertFalse(isValidIdentifier(null));
+		Assertions.assertFalse(isValidIdentifier(""));
+		Assertions.assertFalse(isValidIdentifier("_"));
+		Assertions.assertFalse(isValidIdentifier(" "));
+		Assertions.assertFalse(isValidIdentifier("spaces and spaces"));
 		
-		Assert.assertFalse(isValidIdentifier("invalidEnEspañol"));
-		Assert.assertFalse(isValidIdentifier("a-b"));
-		Assert.assertFalse(isValidIdentifier("a+b"));
+		Assertions.assertFalse(isValidIdentifier("invalidEnEspañol"));
+		Assertions.assertFalse(isValidIdentifier("a-b"));
+		Assertions.assertFalse(isValidIdentifier("a+b"));
 		
-		Assert.assertTrue(isValidIdentifier("test"));
-		Assert.assertTrue(isValidIdentifier("valid"));
-		Assert.assertTrue(isValidIdentifier("kk"));
-		Assert.assertTrue(isValidIdentifier("_isValid"));
-		Assert.assertTrue(isValidIdentifier("__"));
+		Assertions.assertTrue(isValidIdentifier("test"));
+		Assertions.assertTrue(isValidIdentifier("valid"));
+		Assertions.assertTrue(isValidIdentifier("kk"));
+		Assertions.assertTrue(isValidIdentifier("_isValid"));
+		Assertions.assertTrue(isValidIdentifier("__"));
 		
 		
 	}
