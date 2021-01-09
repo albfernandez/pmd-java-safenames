@@ -95,9 +95,7 @@ public class NamingConventionsRule extends AbstractJavaRule {
 		if ("_".equals(name)) {
 			return false;
 		}
-		int size = name.length();
-		for (int i = 0; i < size; i++) {
-			char c = name.charAt(i);
+		for (char c: name.toCharArray()) {
 			boolean valid = c >= 'a' && c <= 'z' || c >= '0' && c <= '9' || c >= 'A' && c <= 'Z' || c == '_';
 			if (!valid) {
 				return false;
