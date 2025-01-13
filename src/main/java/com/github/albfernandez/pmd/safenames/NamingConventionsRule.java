@@ -5,6 +5,8 @@ import net.sourceforge.pmd.lang.ast.Node;
 import net.sourceforge.pmd.lang.java.ast.ASTClassOrInterfaceBodyDeclaration;
 import net.sourceforge.pmd.lang.java.ast.ASTClassOrInterfaceDeclaration;
 import net.sourceforge.pmd.lang.java.ast.ASTConstructorDeclaration;
+import net.sourceforge.pmd.lang.java.ast.ASTEnumConstant;
+import net.sourceforge.pmd.lang.java.ast.ASTEnumDeclaration;
 import net.sourceforge.pmd.lang.java.ast.ASTFieldDeclaration;
 import net.sourceforge.pmd.lang.java.ast.ASTFormalParameter;
 import net.sourceforge.pmd.lang.java.ast.ASTFormalParameters;
@@ -71,6 +73,24 @@ public class NamingConventionsRule extends AbstractJavaRule {
 					addViolation(data, variableDeclaratorId, variableName);
 				}
 			}
+		}
+		return super.visit(node, data);
+	}
+	
+	@Override
+	public Object visit(ASTEnumDeclaration node, Object data) {
+		String enumName = node.getImage();
+		if (!isValidIdentifier(enumName)) {
+			addViolation(data, node, enumName);
+		}
+		return super.visit(node, data);
+	}
+	
+	@Override
+	public Object visit(ASTEnumConstant node, Object data) {
+		String constantName = node.getImage();
+		if (!isValidIdentifier(constantName)) {
+			addViolation(data, node, constantName);
 		}
 		return super.visit(node, data);
 	}

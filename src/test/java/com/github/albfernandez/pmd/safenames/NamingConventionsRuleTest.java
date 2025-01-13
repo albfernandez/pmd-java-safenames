@@ -34,4 +34,30 @@ public class NamingConventionsRuleTest {
 		Assertions.assertEquals(3, PMDRunner.run("src/test/java/examples/RejectedVariableNames.java"));
 	}
 	
+	@Test
+	public void testRejectedInterfaceName() throws Exception {
+		Assertions.assertEquals(1, PMDRunner.run("src/test/java/examples/RejectedInterfaceNameÑo.java"));
+	}
+	
+	@Test
+	public void testRejectedInterfaceMethod() throws Exception {
+		Assertions.assertEquals(3, PMDRunner.run("src/test/java/examples/RejectedInterfaceMethodName.java"));
+	}
+	
+	@Test
+	public void testRejectedEnumName() throws Exception {
+		Assertions.assertEquals(1, PMDRunner.run("src/test/java/examples/RejectedEnumNameÑo.java"));
+	}
+	
+	@Test
+	public void testRejectedEnumKey() throws Exception {
+		Assertions.assertEquals(3, PMDRunner.run("src/test/java/examples/RejectedEnumConstantName.java"));
+	}
+	
+	@Test
+	public void testRejectedEnumMethod() throws Exception {
+		Assertions.assertEquals(1, PMDRunner.run("src/test/java/examples/RejectedEnumMethodName.java"));
+	}
+	
+	
 }
